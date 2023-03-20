@@ -6,6 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    QPixmap logopix("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/homeScreen1.png");
+    ui->label_logo->setPixmap(logopix);
 }
 
 MainWindow::~MainWindow()
