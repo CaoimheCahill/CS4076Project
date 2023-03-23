@@ -17,6 +17,9 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        quickandeasy.cpp
+        quickandeasy.h
+        quickandeasy.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
