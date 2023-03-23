@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include "quickandeasy.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,8 +20,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-   QuickAndEasy qae;
-   qae.setModal(true);
-   qae.exec();
+//   QuickAndEasy qae;
+//   qae.setModal(true);
+//   qae.exec();
+    hide();
+    qae = new QuickAndEasy(this);
+    qae->show();
+
 }
 
