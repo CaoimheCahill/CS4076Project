@@ -20,6 +20,8 @@ set(PROJECT_SOURCES
         quickandeasy.cpp
         quickandeasy.h
         quickandeasy.ui
+        recipeticket.h
+        recipeticket.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
