@@ -23,6 +23,11 @@ set(PROJECT_SOURCES
         recipeticket.h
         recipeticket.cpp
         resources.qrc
+        addrecipewindow.h
+        addrecipewindow.cpp
+        addrecipewindow.ui
+        recipes.h
+        recipes.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

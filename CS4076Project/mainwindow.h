@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "quickandeasy.h"
+#include "addrecipewindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,10 +19,12 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+    void on_pushButton_4_clicked();
 
 private:
     Ui::MainWindow *ui;
     QuickAndEasy *qae;
+    addrecipewindow *addrecw;
 
 };
 #endif // MAINWINDOW_H

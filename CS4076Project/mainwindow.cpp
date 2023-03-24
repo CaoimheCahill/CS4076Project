@@ -8,9 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     QPixmap logopix(":/resources/Images/logo.png");
-    int w = ui->label_logo->width();
-    int h = ui->label_logo->height();
-    ui->label_logo->setPixmap(logopix.scaled(w,h,Qt::KeepAspectRatio));
+    ui->label_logo->setPixmap(logopix);
 }
 
 MainWindow::~MainWindow()
@@ -28,5 +26,11 @@ void MainWindow::on_pushButton_clicked()
     qae = new QuickAndEasy(this);
     qae->show();
 
+}
+
+void MainWindow::on_pushButton_4_clicked(){
+    hide();
+    addrecw = new addrecipewindow(this);
+    addrecw->show();
 }
 
