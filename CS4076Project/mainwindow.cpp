@@ -7,9 +7,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    QPixmap logopix("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/homeScreen1.png");
-    ui->label_logo->setPixmap(logopix);
+    QPixmap logopix(":/resources/Images/logo.png");
+    int w = ui->label_logo->width();
+    int h = ui->label_logo->height();
+    ui->label_logo->setPixmap(logopix.scaled(w,h,Qt::KeepAspectRatio));
 }
 
 MainWindow::~MainWindow()
