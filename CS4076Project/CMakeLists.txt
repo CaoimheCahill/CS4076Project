@@ -28,6 +28,10 @@ set(PROJECT_SOURCES
         addrecipewindow.ui
         recipes.h
         recipes.cpp
+        filereader.h
+        filereader.cpp
+        filewriter.h
+        filewriter.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
