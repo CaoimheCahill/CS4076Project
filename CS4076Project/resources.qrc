@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/resources">
         <file>Images/logo.png</file>
+        <file>Images/Recipes.csv</file>
     </qresource>
 </RCC>
