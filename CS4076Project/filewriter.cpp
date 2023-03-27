@@ -2,7 +2,7 @@
 
 filewriter::filewriter()
 {
-    writer = ofstream("lol");
+    writer = ofstream(":/resources/Images/Recipes.csv");
 
 }
 

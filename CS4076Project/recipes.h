@@ -1,6 +1,7 @@
 #ifndef RECIPES_H
 #define RECIPES_H
 #include "recipeticket.h"
+#include "filewriter.h"
 #include <vector>
 
 using namespace std;
@@ -11,9 +12,12 @@ class recipes
 {
 private:
     vector<Recipeticket> recipeList;
+    filewriter writer;
 public:
     recipes();
+    recipes(vector<Recipeticket> recipes);
     void addRecipe(Recipeticket recipeticket);
+    void updateCSVfile();
 };
 
 #endif // RECIPES_H

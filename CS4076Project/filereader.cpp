@@ -15,7 +15,7 @@ filereader::filereader()
 
 vector<Recipeticket> filereader::readRecipes(){
     try {
-        stream.open("Recipes.csv");
+        stream.open(":/resources/Images/Recipes.csv");
         vector<Recipeticket> recipes;
 
         while(getline(stream, line)){
