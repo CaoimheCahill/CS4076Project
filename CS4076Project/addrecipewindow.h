@@ -1,8 +1,7 @@
 #ifndef ADDRECIPEWINDOW_H
 #define ADDRECIPEWINDOW_H
 #include <string>
-#include "recipes.h"
-#include "recipeticket.h"
+#include <vector>
 
 #include <QDialog>
 
@@ -23,6 +22,7 @@ private slots:
     void on_buttonBox_accepted();
 
     void on_buttonBox_rejected();
+
 
 private:
     Ui::addrecipewindow *ui;

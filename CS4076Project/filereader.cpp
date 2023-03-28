@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <QFile>
+#include <QTextStream>
 #include <string>
 #include "filereader.h"
 #include "recipeticket.h"
@@ -9,30 +11,42 @@ using namespace std;
 
 filereader::filereader()
 {
-    stream = ifstream();
+    //QFile file(":/resources/Images/Recipes.csv");
 
 }
 
 vector<Recipeticket> filereader::readRecipes(){
+    QFile file("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/Recipes.csv");
     try {
-        stream.open(":/resources/Images/Recipes.csv");
-        vector<Recipeticket> recipes;
-
-        while(getline(stream, line)){
-            int commaIndex = line.find(",");
-            category = line.substr(0, commaIndex);
-            name = line.substr(commaIndex + 1);
-            description = line.substr(commaIndex + 2);
-            ingrediants = line.substr(commaIndex + 3);
-            steps = line.substr(commaIndex + 4);
-            calories = (stoi(line.substr(commaIndex + 5)));
-
-            recipes.push_back(Recipeticket(category, name, description, ingrediants, steps, calories));
+        if(!file.open(QFile::ReadOnly | QFile :: Text)){
+            cerr << "Error opening file";
+            return vector<Recipeticket>();
         }
 
+        vector<Recipeticket> recipes;
+        QTextStream in(&file);
+
+        while(!in.atEnd()){
+            QString line = in.readLine();
+            QStringList fields = line.split(",");
+            if(fields.size() != 6){
+                cerr << "Invalid line format: " << line.toStdString() << endl;
+                continue;
+            }
+            QString category = fields.at(0);
+            QString name = fields.at(1);
+            QString description = fields.at(2);
+            QString ingrediants = fields.at(3);
+            QString steps = fields.at(4);
+            int calories = fields.at(5).toInt();
+            recipes.push_back(Recipeticket(category.toStdString(), name.toStdString(), description.toStdString(), ingrediants.toStdString(), steps.toStdString(), calories));
+        }
+        file.flush();
+        file.close();
         return recipes;
     } catch (...) {
         cerr << "Error opening/reading file";
+        return vector<Recipeticket>();
     }
 
 }

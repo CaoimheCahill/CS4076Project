@@ -16,8 +16,8 @@ private:
 public:
     recipes();
     recipes(vector<Recipeticket> recipes);
-    void addRecipe(Recipeticket recipeticket);
-    void updateCSVfile();
+    void addRecipe(Recipeticket recipeticket, vector<Recipeticket> recipeList);
+    void updateCSVfile(vector<Recipeticket> recipeList);
 };
 
 #endif // RECIPES_H

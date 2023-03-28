@@ -5,7 +5,7 @@
 
 using namespace std;
 
-vector<Recipeticket> recipeList;
+//vector<Recipeticket> recipeList;
 filewriter writer;
 
 recipes::recipes()
@@ -17,11 +17,11 @@ recipes::recipes(vector<Recipeticket> recipeList)
     : recipeList(recipeList), writer(filewriter()){
 }
 
-void updateCSVfile(){
+void recipes::updateCSVfile(vector<Recipeticket> recipeList){
     writer.writeRecipes(recipeList);
 }
 
-void addRecipe(Recipeticket recipeticket){
+void recipes::addRecipe(Recipeticket recipeticket, vector<Recipeticket> recipeList){
     recipeList.push_back(recipeticket);
-    //updateCSVfile();
+    updateCSVfile(recipeList);
 }

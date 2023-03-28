@@ -1,7 +1,8 @@
 #ifndef FILEWRITER_H
 #define FILEWRITER_H
 #include <iostream>
-#include <fstream>
+#include <QFile>
+#include <QTextStream>
 #include <vector>
 #include "recipeticket.h"
 
@@ -14,8 +15,8 @@ public:
     void writeRecipes(vector<Recipeticket> recipes);
 
 private:
-    ofstream writer;
-    string line;
+    QFile file;
+    QTextStream out;
 };
 
 #endif // FILEWRITER_H

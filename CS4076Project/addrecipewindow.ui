@@ -48,14 +48,14 @@
      <item>
       <widget class="QCheckBox" name="checkBox">
        <property name="text">
-        <string>CheckBox</string>
+        <string>Chicken</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QCheckBox" name="checkBox_2">
        <property name="text">
-        <string>CheckBox</string>
+        <string>Rice</string>
        </property>
       </widget>
      </item>

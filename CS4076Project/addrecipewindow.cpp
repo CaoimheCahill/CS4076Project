@@ -1,9 +1,11 @@
 #include "addrecipewindow.h"
 #include "ui_addrecipewindow.h"
-#include <string>
+//#include <string>
 #include "recipes.h"
 #include "recipeticket.h"
 #include "filereader.h"
+#include "mainwindow.h"
+
 
 using namespace std;
 
@@ -23,11 +25,11 @@ addrecipewindow::~addrecipewindow()
 
 void addrecipewindow::on_buttonBox_accepted()
 {
-
-    filereader *recipeFile = new filereader();
-    recipeFile->readRecipes();
     vector<Recipeticket> recipeList;
-    recipes *recipeSystem = new recipes(recipeList);
+    filereader *recipeFile = new filereader();
+    recipeList = recipeFile->readRecipes();
+    recipes *recipeSystem;
+    recipeSystem = new recipes(recipeList);
 
 
 
@@ -65,17 +67,20 @@ void addrecipewindow::on_buttonBox_accepted()
     string ingrediants = checkedBoxes.toStdString();
 
     Recipeticket* newRecipe = new Recipeticket(category, name, description, ingrediants, steps, calories);
-//    recipeSystem->addRecipe(*newRecipe);
-//    recipeSystem->updateCSVfile();
-
-
-
+    recipeSystem->addRecipe(*newRecipe, recipeList);
+    hide();
+    MainWindow* mainWindow = new MainWindow(this);
+    mainWindow->show();
 
 }
 
 
 void addrecipewindow::on_buttonBox_rejected()
 {
+    hide();
+    MainWindow* mainWindow = new MainWindow(this);
+    mainWindow->show();
 
 }
+
 

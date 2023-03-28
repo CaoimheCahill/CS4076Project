@@ -1,19 +1,32 @@
+#include <string>
+#include <vector>
+#include <QFile>
+#include <QTextStream>
+#include "recipeticket.h"
 #include "filewriter.h"
+
+using namespace std;
 
 filewriter::filewriter()
 {
-    writer = ofstream(":/resources/Images/Recipes.csv");
-
+  //QFile file("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/Recipes.csv");
 }
 
-void filewriter::writeRecipes(vector<Recipeticket> recipes){
-    try {
-        for(Recipeticket r : recipes){
-            line = r.getCategory() + "," + r.getName() + "," + r.getDescription() + "," + r.getIngrediants() + "," + r.getSteps() + "," + to_string(r.getCalories());
-            writer << line << endl;
-        }
-    }catch (...) {
-        cerr << "Error writing into file";
+void filewriter::writeRecipes(vector<Recipeticket> recipeList)
+{
+    QFile file("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/Recipes.csv");
+
+    if(!file.open(QFile::WriteOnly | QFile::Text)){
+        cerr << "Error opening file";
     }
+
+    QTextStream out(&file);
+    for(Recipeticket recipe : recipeList){
+        QString line = QString::fromStdString(recipe.getCategory() + "," + recipe.getName() + "," + recipe.getDescription() + "," + recipe.getIngrediants() + "," + recipe.getSteps() + "," + to_string(recipe.getCalories()));
+        out << line << "\n";
+    }
+    file.flush();
+    file.close();
 }
+
 

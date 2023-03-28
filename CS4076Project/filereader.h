@@ -1,8 +1,8 @@
 #ifndef FILEREADER_H
 #define FILEREADER_H
 
-#include <fstream>
-#include <string>
+#include <QFile>
+#include <QStringList>
 #include <vector>
 #include "recipeticket.h"
 
@@ -17,8 +17,9 @@ public:
 
 private:
 
-    ifstream stream;
-    string line, location, category, name, description, ingrediants, steps;
+    QFile file;
+    QString filename;
+    QString line, location, category, name, description, ingrediants, steps;
     int calories;
 };
 

@@ -21,6 +21,7 @@ public:
     void setSteps(string newSteps);
     int getCalories();
     void setCalories(int newCalories);
+    string toString();
 
 private:
     string category;

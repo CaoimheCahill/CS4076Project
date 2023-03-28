@@ -60,4 +60,8 @@ void Recipeticket::setCalories(int calories){
     this->calories = calories;
 }
 
+string Recipeticket::toString(){
+    return this->getCategory() + this->getName() +this->getDescription() + this->getIngrediants() + this->getSteps() + to_string(this->getCalories());
+}
+
 
