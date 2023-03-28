@@ -2,6 +2,11 @@
 #define QUICKANDEASY_H
 
 #include <QDialog>
+#include <QFile>
+#include <QScrollArea>
+#include <QPushButton>
+#include <QWidget>
+#include <QVBoxLayout>
 
 namespace Ui {
 class QuickAndEasy;
@@ -17,6 +22,10 @@ public:
 
 private:
     Ui::QuickAndEasy *ui;
+    QScrollArea* scrollArea;
+    QWidget* container;
+    QVBoxLayout* lay;
+
 };
 
 #endif // QUICKANDEASY_H

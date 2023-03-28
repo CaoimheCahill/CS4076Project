@@ -25,6 +25,8 @@ void MainWindow::on_pushButton_clicked()
     hide();
     qae = new QuickAndEasy(this);
     qae->show();
+//    QuickAndEasy qae;
+//    qae.show();
 
 }
 
