@@ -27,6 +27,7 @@ QuickAndEasy::QuickAndEasy(QWidget *parent) :
         connect(button, &QPushButton::clicked, this, &QuickAndEasy::showRecipeDetails);
     }
 
+    delete recipeFile;
 
 }
 

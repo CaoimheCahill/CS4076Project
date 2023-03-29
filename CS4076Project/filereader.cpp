@@ -16,7 +16,7 @@ filereader::filereader()
 }
 
 vector<Recipeticket> filereader::readRecipes(){
-    QFile file("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/Recipes.csv");
+    QFile file("../CS4076Project/CS4076Project/Images/Recipes.csv");
     try {
         if(!file.open(QFile::ReadOnly | QFile :: Text)){
             cerr << "Error opening file";
@@ -29,7 +29,7 @@ vector<Recipeticket> filereader::readRecipes(){
         while(!in.atEnd()){
             QString line = in.readLine();
             QStringList fields = line.split(",");
-            if(fields.size() != 6){
+            if(fields.size() != 7){
                 cerr << "Invalid line format: " << line.toStdString() << endl;
                 continue;
             }
@@ -39,7 +39,8 @@ vector<Recipeticket> filereader::readRecipes(){
             QString ingrediants = fields.at(3);
             QString steps = fields.at(4);
             int calories = fields.at(5).toInt();
-            recipes.push_back(Recipeticket(category.toStdString(), name.toStdString(), description.toStdString(), ingrediants.toStdString(), steps.toStdString(), calories));
+            QString difficulty = fields.at(5);
+            recipes.push_back(Recipeticket(category.toStdString(), name.toStdString(), description.toStdString(), ingrediants.toStdString(), steps.toStdString(), calories, difficulty.toStdString()));
         }
         file.flush();
         file.close();

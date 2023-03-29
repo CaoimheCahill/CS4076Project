@@ -8,7 +8,8 @@ using namespace std;
 class Recipeticket
 {
 public:
-    Recipeticket(string category, string name, string description, string ingrediants, string steps, int calories );
+    Recipeticket();
+    Recipeticket(string category, string name, string description, string ingrediants, string steps, int calories, string difficulty );
     string getCategory();
     void setCategory(string newCategory);
     string getName();
@@ -21,7 +22,10 @@ public:
     void setSteps(string newSteps);
     int getCalories();
     void setCalories(int newCalories);
+    string getDifficulty();
+    void setDifficulty(string difficulty);
     string toString();
+
 
 private:
     string category;
@@ -29,6 +33,7 @@ private:
     string description;
     string ingrediants;
     string steps;
+    string difficulty;
     int calories;
 };
 

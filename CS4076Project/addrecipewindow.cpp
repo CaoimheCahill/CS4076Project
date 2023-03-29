@@ -32,8 +32,6 @@ void addrecipewindow::on_buttonBox_accepted()
     recipeSystem = new recipes(recipeList);
 
 
-
-
     QString newName = ui->lineEdit->text();
     string name = newName.toStdString();
 
@@ -66,9 +64,31 @@ void addrecipewindow::on_buttonBox_accepted()
 
     string ingrediants = checkedBoxes.toStdString();
 
-    Recipeticket* newRecipe = new Recipeticket(category, name, description, ingrediants, steps, calories);
+    QSlider *slider = ui->horizontalSlider;
+    slider->setRange(1,3);
+    int value = slider->value();
+
+    QString newDifficulty;
+    switch (value) {
+    case 1:
+        newDifficulty = "Easy";
+        break;
+    case 2:
+        newDifficulty = "Medium";
+        break;
+    case 3:
+        newDifficulty = "Difficult";
+        break;
+    }
+
+    string difficulty = newDifficulty.toStdString();
+
+    Recipeticket* newRecipe = new Recipeticket(category, name, description, ingrediants, steps, calories, difficulty);
     recipeSystem->addRecipe(*newRecipe, recipeList);
     hide();
+    delete recipeFile;
+    delete recipeSystem;
+    delete newRecipe;
     MainWindow* mainWindow = new MainWindow(this);
     mainWindow->show();
 
