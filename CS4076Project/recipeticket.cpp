@@ -17,64 +17,43 @@ Recipeticket::Recipeticket(string category, string name, string description, str
 //    this->calories = calories;
 //}
 
+Recipeticket::~Recipeticket(){}
+
 string Recipeticket::getCategory(){
     return category;
 }
 
-void Recipeticket::setCategory(string category){
-    this->category = category;
-}
+
 
 string Recipeticket::getName(){
     return name;
 }
 
-void Recipeticket::setName(string name){
-    this->name = name;
-}
 
 string Recipeticket::getDescription(){
     return description;
 }
 
-void Recipeticket::setDescription(string description){
-    this->description = description;
-}
 
 string Recipeticket::getIngrediants(){
     return ingrediants;
 }
 
-void Recipeticket::setIngrediants(string ingrediants){
-    this->ingrediants = ingrediants;
-}
 
 string Recipeticket::getSteps(){
     return steps;
 }
 
-void Recipeticket::setSteps(string steps){
-    this->steps = steps;
-}
+
 
 int Recipeticket::getCalories(){
     return calories;
-}
-
-void Recipeticket::setCalories(int calories){
-    this->calories = calories;
 }
 
 string Recipeticket::getDifficulty(){
     return difficulty;
 }
 
-void Recipeticket::setDifficulty(string difficulty){
-    this->difficulty = difficulty;
-}
 
-string Recipeticket::toString(){
-    return this->getCategory() + this->getName() +this->getDescription() + this->getIngrediants() + this->getSteps() + to_string(this->getCalories()) + this->getDifficulty();
-}
 
 

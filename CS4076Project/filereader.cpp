@@ -12,16 +12,17 @@ using namespace std;
 
 filereader::filereader()
 {
-   //QFile file(":/resources/Images/Recipes.csv");
+   QFile file(":/resources/Images/Recipes.csv");
 
 }
+
+filereader::~filereader(){}
 
 vector<Recipeticket> filereader::readRecipes(){
     QFile file("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/Recipes.csv");
     try {
         if(!file.open(QFile::ReadOnly | QFile :: Text)){
             throw invalidInputException("Error Opening File");
-
         }
 
         vector<Recipeticket> recipes;
@@ -31,7 +32,7 @@ vector<Recipeticket> filereader::readRecipes(){
             QString line = in.readLine();
             QStringList fields = line.split(",");
             if(fields.size() != 7){
-                cerr << "Invalid line format: " << line.toStdString() << endl;
+                throw invalidInputException("Error: some lines are wrong");
                 continue;
             }
             QString category = fields.at(0);

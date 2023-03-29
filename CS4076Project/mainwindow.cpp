@@ -19,14 +19,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-//   QuickAndEasy qae;
-//   qae.setModal(true);
-//   qae.exec();
+
     hide();
     qae = new QuickAndEasy(this);
     qae->show();
-//    QuickAndEasy qae;
-//    qae.show();
+
 
 }
 

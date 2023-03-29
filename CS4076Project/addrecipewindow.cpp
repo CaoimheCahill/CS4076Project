@@ -88,6 +88,7 @@ void addrecipewindow::on_buttonBox_accepted()
     delete recipeFile;
     delete recipeSystem;
     delete newRecipe;
+
     MainWindow* mainWindow = new MainWindow(this);
     mainWindow->show();
 

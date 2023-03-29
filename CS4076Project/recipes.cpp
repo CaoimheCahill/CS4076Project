@@ -5,17 +5,15 @@
 
 using namespace std;
 
-//vector<Recipeticket> recipeList;
-filewriter writer;
+ filewriter writer;
 
 recipes::recipes()
-   : recipeList(vector<Recipeticket>()), writer(filewriter()){
-
-}
+   : recipeList(vector<Recipeticket>()), writer(filewriter()){}
 
 recipes::recipes(vector<Recipeticket> recipeList)
-    : recipeList(recipeList), writer(filewriter()){
-}
+    : recipeList(recipeList), writer(filewriter()){}
+
+recipes::~recipes(){};
 
 void recipes::updateCSVfile(vector<Recipeticket> recipeList){
     writer.writeRecipes(recipeList);

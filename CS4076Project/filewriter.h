@@ -4,15 +4,17 @@
 #include <QFile>
 #include <QTextStream>
 #include <vector>
+#include "invalidinputexception.h"
 #include "recipeticket.h"
 
 using namespace std;
 
-class filewriter
+class filewriter : public invalidInputException
 {
 public:
     filewriter();
     void writeRecipes(vector<Recipeticket> recipes);
+    ~filewriter();
 
 private:
     QFile file;

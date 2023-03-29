@@ -10,6 +10,7 @@ public:
     invalidInputException();
     invalidInputException(const string& message);
     virtual const char* what();
+    ~invalidInputException();
 
 private:
     string message;

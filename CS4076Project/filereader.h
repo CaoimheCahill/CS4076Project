@@ -15,6 +15,7 @@ class filereader : public invalidInputException
 public:
     filereader();
     vector<Recipeticket> readRecipes();
+    ~filereader();
 
 private:
 

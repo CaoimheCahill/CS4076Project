@@ -1,6 +1,7 @@
 #ifndef RECIPEINFO_H
 #define RECIPEINFO_H
 
+#include "invalidinputexception.h"
 #include <QDialog>
 #include <QToolButton>
 #include <QStackedWidget>
@@ -9,7 +10,7 @@ namespace Ui {
 class recipeInfo;
 }
 
-class recipeInfo : public QDialog
+class recipeInfo : public QDialog, public invalidInputException
 {
     Q_OBJECT
 
@@ -21,9 +22,6 @@ public:
 private:
     Ui::recipeInfo *ui;
     QString newRecipeName;
-
-private slots:
-    void goBack();
 
 };
 

@@ -15,6 +15,7 @@ private:
     filewriter writer;
 public:
     recipes();
+    ~recipes();
     recipes(vector<Recipeticket> recipes);
     void addRecipe(Recipeticket recipeticket, vector<Recipeticket> recipeList);
     void updateCSVfile(vector<Recipeticket> recipeList);
