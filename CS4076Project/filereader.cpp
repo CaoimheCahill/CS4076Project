@@ -6,21 +6,22 @@
 #include <string>
 #include "filereader.h"
 #include "recipeticket.h"
+#include <QMessageBox>
 
 using namespace std;
 
 filereader::filereader()
 {
-    //QFile file(":/resources/Images/Recipes.csv");
+   //QFile file(":/resources/Images/Recipes.csv");
 
 }
 
 vector<Recipeticket> filereader::readRecipes(){
-    QFile file("../CS4076Project/CS4076Project/Images/Recipes.csv");
+    QFile file("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/Recipes.csv");
     try {
         if(!file.open(QFile::ReadOnly | QFile :: Text)){
-            cerr << "Error opening file";
-            return vector<Recipeticket>();
+            throw invalidInputException("Error Opening File");
+
         }
 
         vector<Recipeticket> recipes;
@@ -39,15 +40,15 @@ vector<Recipeticket> filereader::readRecipes(){
             QString ingrediants = fields.at(3);
             QString steps = fields.at(4);
             int calories = fields.at(5).toInt();
-            QString difficulty = fields.at(5);
+            QString difficulty = fields.at(6);
             recipes.push_back(Recipeticket(category.toStdString(), name.toStdString(), description.toStdString(), ingrediants.toStdString(), steps.toStdString(), calories, difficulty.toStdString()));
         }
         file.flush();
         file.close();
         return recipes;
-    } catch (...) {
-        cerr << "Error opening/reading file";
-        return vector<Recipeticket>();
+    } catch ( invalidInputException& e) {
+        QMessageBox::warning(nullptr, "Error", e.what());
+
     }
 
 }

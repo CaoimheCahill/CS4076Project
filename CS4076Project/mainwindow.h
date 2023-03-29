@@ -16,6 +16,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void reloadScreen();
 
 private slots:
     void on_pushButton_clicked();

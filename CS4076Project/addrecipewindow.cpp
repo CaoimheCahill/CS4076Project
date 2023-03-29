@@ -1,6 +1,5 @@
 #include "addrecipewindow.h"
 #include "ui_addrecipewindow.h"
-//#include <string>
 #include "recipes.h"
 #include "recipeticket.h"
 #include "filereader.h"

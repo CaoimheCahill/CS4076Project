@@ -1,7 +1,9 @@
 #include "recipeinfo.h"
 #include "filereader.h"
+#include "quickandeasy.h"
 #include "recipeticket.h"
 #include "ui_recipeinfo.h"
+#include <QMenu>
 
 recipeInfo::recipeInfo(QString recipeName, QWidget *parent) :
     QDialog(parent),
@@ -11,7 +13,7 @@ recipeInfo::recipeInfo(QString recipeName, QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //ui->label->setText(recipeName);
+
     vector<Recipeticket> recipeList;
     filereader *recipeFile = new filereader();
     recipeList = recipeFile->readRecipes();
@@ -30,7 +32,17 @@ recipeInfo::recipeInfo(QString recipeName, QWidget *parent) :
     }
 }
 
+void recipeInfo::goBack(){
+    hide();
+    QuickAndEasy* qae = new QuickAndEasy(this);
+    qae->show();
+
+}
+
 recipeInfo::~recipeInfo()
 {
     delete ui;
 }
+
+
+

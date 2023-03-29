@@ -4,12 +4,13 @@
 #include <QFile>
 #include <QStringList>
 #include <vector>
+#include "invalidinputexception.h"
 #include "recipeticket.h"
 
 using namespace std;
 
 
-class filereader
+class filereader : public invalidInputException
 {
 public:
     filereader();

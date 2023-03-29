@@ -35,6 +35,8 @@ set(PROJECT_SOURCES
         recipeinfo.h
         recipeinfo.cpp
         recipeinfo.ui
+        invalidinputexception.h
+        invalidinputexception.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

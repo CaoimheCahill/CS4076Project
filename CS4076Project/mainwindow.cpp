@@ -35,4 +35,3 @@ void MainWindow::on_pushButton_2_clicked(){
     addrecw = new addrecipewindow(this);
     addrecw->show();
 }
-

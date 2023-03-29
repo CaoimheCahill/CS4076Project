@@ -14,7 +14,7 @@ filewriter::filewriter()
 
 void filewriter::writeRecipes(vector<Recipeticket> recipeList)
 {
-    QFile file("../CS4076Project/CS4076Project/Images/Recipes.csv");
+    QFile file("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/Recipes.csv");
 
     if(!file.open(QFile::WriteOnly | QFile::Text)){
         cerr << "Error opening file";
