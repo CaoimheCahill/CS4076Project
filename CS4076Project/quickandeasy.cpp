@@ -10,9 +10,6 @@ QuickAndEasy::QuickAndEasy(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-
-
     container = ui->widget;
     scrollArea = ui->scrollArea;
     container->setParent(scrollArea);
@@ -39,8 +36,14 @@ QuickAndEasy::~QuickAndEasy()
 }
 
 void QuickAndEasy::showRecipeDetails(){
-    hide();
-    recipeInfo *recipeinfo = new recipeInfo;
-    recipeinfo->show();
+
+    QPushButton *button = qobject_cast<QPushButton*>(sender());
+    if(button){
+        QString buttonName = button->text();
+        hide();
+        recipeInfo *recipeinfo = new recipeInfo(buttonName);
+        recipeinfo->show();
+    }
+
 
 }

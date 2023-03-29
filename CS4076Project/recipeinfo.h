@@ -12,11 +12,12 @@ class recipeInfo : public QDialog
     Q_OBJECT
 
 public:
-    explicit recipeInfo(QWidget *parent = nullptr);
+    explicit recipeInfo(QString recipeName, QWidget *parent = nullptr);
     ~recipeInfo();
 
 private:
     Ui::recipeInfo *ui;
+    QString newRecipeName;
 };
 
 #endif // RECIPEINFO_H
