@@ -30,7 +30,7 @@ void MainWindow::on_pushButton_clicked()
 
 }
 
-void MainWindow::on_pushButton_4_clicked(){
+void MainWindow::on_pushButton_2_clicked(){
     hide();
     addrecw = new addrecipewindow(this);
     addrecw->show();

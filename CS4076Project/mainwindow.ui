@@ -28,26 +28,12 @@
     <item>
      <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>Quick and Easy</string>
+       <string>Recipe List!</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>Healthy Dishes</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>Vegetarian</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_4">
       <property name="text">
        <string>Add a New Recipe</string>
       </property>
