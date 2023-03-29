@@ -1,4 +1,5 @@
 #include "quickandeasy.h"
+#include "recipeinfo.h"
 #include "ui_quickandeasy.h"
 #include "recipeticket.h"
 #include "filereader.h"
@@ -9,10 +10,14 @@ QuickAndEasy::QuickAndEasy(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    container = new QWidget(this);
-    scrollArea = new QScrollArea(this);
+
+
+
+    container = ui->widget;
+    scrollArea = ui->scrollArea;
+    container->setParent(scrollArea);
     scrollArea->setWidget(container);
-    scrollArea->setWidgetResizable(true);
+
     lay = new QVBoxLayout(container);
 
     vector<Recipeticket> recipeList;
@@ -22,9 +27,8 @@ QuickAndEasy::QuickAndEasy(QWidget *parent) :
     for(Recipeticket r : recipeList){
         QPushButton* button = new QPushButton(QString::fromStdString(r.getName()), scrollArea);
         lay->addWidget(button);
+        connect(button, &QPushButton::clicked, this, &QuickAndEasy::showRecipeDetails);
     }
-
-    //container->setCentralWidget(scrollArea);
 
 
 }
@@ -32,4 +36,11 @@ QuickAndEasy::QuickAndEasy(QWidget *parent) :
 QuickAndEasy::~QuickAndEasy()
 {
     delete ui;
+}
+
+void QuickAndEasy::showRecipeDetails(){
+    hide();
+    recipeInfo *recipeinfo = new recipeInfo;
+    recipeinfo->show();
+
 }

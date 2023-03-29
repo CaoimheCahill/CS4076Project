@@ -26,6 +26,9 @@ private:
     QWidget* container;
     QVBoxLayout* lay;
 
+private slots:
+    void showRecipeDetails();
+
 };
 
 #endif // QUICKANDEASY_H
