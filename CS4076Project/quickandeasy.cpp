@@ -1,4 +1,5 @@
 #include "quickandeasy.h"
+#include "mainwindow.h"
 #include "recipeinfo.h"
 #include "ui_quickandeasy.h"
 #include "recipeticket.h"
@@ -49,3 +50,12 @@ void QuickAndEasy::showRecipeDetails(){
 
 
 }
+
+
+void QuickAndEasy::on_pushButton_clicked()
+{
+    hide();
+    MainWindow* mainWindow = new MainWindow(this);
+    mainWindow->show();
+}
+

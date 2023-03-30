@@ -12,14 +12,14 @@ using namespace std;
 
 filereader::filereader()
 {
-   QFile file(":/resources/Images/Recipes.csv");
+   QFile file("../CS4076Project/Images/Recipes.csv");
 
 }
 
 filereader::~filereader(){}
 
 vector<Recipeticket> filereader::readRecipes(){
-    QFile file("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/Recipes.csv");
+    QFile file("../CS4076Project/Images/Recipes.csv");
     try {
         if(!file.open(QFile::ReadOnly | QFile :: Text)){
             throw invalidInputException("Error Opening File");

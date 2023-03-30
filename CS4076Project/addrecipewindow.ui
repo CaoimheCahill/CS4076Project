@@ -62,56 +62,56 @@
      <item>
       <widget class="QCheckBox" name="checkBox_3">
        <property name="text">
-        <string>CheckBox</string>
+        <string>Veg</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QCheckBox" name="checkBox_4">
        <property name="text">
-        <string>CheckBox</string>
+        <string>Sauce</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QCheckBox" name="checkBox_5">
        <property name="text">
-        <string>CheckBox</string>
+        <string>Pasta</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QCheckBox" name="checkBox_6">
        <property name="text">
-        <string>CheckBox</string>
+        <string>Tofu</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QCheckBox" name="checkBox_7">
        <property name="text">
-        <string>CheckBox</string>
+        <string>Cheese</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QCheckBox" name="checkBox_8">
        <property name="text">
-        <string>CheckBox</string>
+        <string>Letuce</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QCheckBox" name="checkBox_9">
        <property name="text">
-        <string>CheckBox</string>
+        <string>Egg</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QCheckBox" name="checkBox_10">
        <property name="text">
-        <string>CheckBox</string>
+        <string>Wrap</string>
        </property>
       </widget>
      </item>

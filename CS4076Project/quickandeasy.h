@@ -29,6 +29,7 @@ private:
 private slots:
     void showRecipeDetails();
 
+    void on_pushButton_clicked();
 };
 
 #endif // QUICKANDEASY_H

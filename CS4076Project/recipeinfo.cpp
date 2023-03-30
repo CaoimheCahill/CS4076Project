@@ -1,5 +1,6 @@
 #include "recipeinfo.h"
 #include "filereader.h"
+#include "quickandeasy.h"
 #include "recipeticket.h"
 #include "ui_recipeinfo.h"
 
@@ -41,5 +42,14 @@ recipeInfo::~recipeInfo()
     delete ui;
 }
 
+
+
+
+void recipeInfo::on_pushButton_clicked()
+{
+    hide();
+    QuickAndEasy* back = new QuickAndEasy(this);
+    back->show();
+}
 
 

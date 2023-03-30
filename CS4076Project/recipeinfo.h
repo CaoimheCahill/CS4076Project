@@ -19,6 +19,9 @@ public:
     ~recipeInfo();
 
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::recipeInfo *ui;
     QString newRecipeName;

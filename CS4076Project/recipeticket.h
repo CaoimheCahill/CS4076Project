@@ -27,8 +27,8 @@ private:
     string description;
     string ingrediants;
     string steps;
-    string difficulty;
     int calories;
+    string difficulty;
 };
 
 #endif // RECIPETICKET_H

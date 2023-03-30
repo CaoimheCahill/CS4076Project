@@ -67,20 +67,19 @@ void addrecipewindow::on_buttonBox_accepted()
     slider->setRange(1,3);
     int value = slider->value();
 
-    QString newDifficulty;
+    string difficulty;
     switch (value) {
     case 1:
-        newDifficulty = "Easy";
+        difficulty = "Easy";
         break;
     case 2:
-        newDifficulty = "Medium";
+        difficulty = "Medium";
         break;
     case 3:
-        newDifficulty = "Difficult";
+        difficulty = "Difficult";
         break;
-    }
 
-    string difficulty = newDifficulty.toStdString();
+    }
 
     //showing copy constructor works
     Recipeticket* recipeReady = new Recipeticket(category, name, description, ingrediants, steps, calories, difficulty);

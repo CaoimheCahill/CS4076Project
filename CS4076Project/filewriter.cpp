@@ -9,14 +9,14 @@ using namespace std;
 
 filewriter::filewriter()
 {
-  QFile file("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/Recipes.csv");
+  QFile file("../CS4076Project/Images/Recipes.csv");
 }
 
 filewriter::~filewriter(){}
 
 void filewriter::writeRecipes(vector<Recipeticket> recipeList)
 {
-    QFile file("C:/Users/caoim/CS4076Project/CS4076Project/CS4076Project/Images/Recipes.csv");
+    QFile file("../CS4076Project/Images/Recipes.csv");
 
     if(!file.open(QFile::WriteOnly | QFile::Text)){
         throw invalidInputException("Error opening file");
