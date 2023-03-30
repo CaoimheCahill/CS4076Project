@@ -82,9 +82,13 @@ void addrecipewindow::on_buttonBox_accepted()
 
     string difficulty = newDifficulty.toStdString();
 
-    Recipeticket* newRecipe = new Recipeticket(category, name, description, ingrediants, steps, calories, difficulty);
+    //showing copy constructor works
+    Recipeticket* recipeReady = new Recipeticket(category, name, description, ingrediants, steps, calories, difficulty);
+    Recipeticket* newRecipe = new Recipeticket(*recipeReady);
     recipeSystem->addRecipe(*newRecipe, recipeList);
+
     hide();
+
     delete recipeFile;
     delete recipeSystem;
     delete newRecipe;

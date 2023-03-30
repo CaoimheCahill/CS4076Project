@@ -7,15 +7,9 @@ Recipeticket::Recipeticket() : category(""), name(""), description(""), ingredia
 Recipeticket::Recipeticket(string category, string name, string description, string ingrediants, string steps, int calories, string difficulty)
 : category(category), name(name), description(description), ingrediants(ingrediants), steps(steps), calories(calories), difficulty(difficulty){}
 
-//Recipeticket::Recipeticket(string category, string name, string description, string ingrediants, string steps, int calories)
-//{
-//    this->category = category;
-//    this->name = name;
-//    this->description = description;
-//    this->ingrediants = ingrediants;
-//    this->steps = steps;
-//    this->calories = calories;
-//}
+
+Recipeticket::Recipeticket(const Recipeticket& other)
+    : category(other.category), name(other.name), description(other.description), ingrediants(other.ingrediants), steps(other.steps), calories(other.calories), difficulty(other.difficulty){}
 
 Recipeticket::~Recipeticket(){}
 

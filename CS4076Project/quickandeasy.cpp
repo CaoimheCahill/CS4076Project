@@ -4,6 +4,7 @@
 #include "recipeticket.h"
 #include "filereader.h"
 
+
 QuickAndEasy::QuickAndEasy(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::QuickAndEasy)

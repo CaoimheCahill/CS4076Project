@@ -10,6 +10,7 @@ class Recipeticket
 public:
     Recipeticket();
     Recipeticket(string category, string name, string description, string ingrediants, string steps, int calories, string difficulty );
+    Recipeticket(const Recipeticket& other);
     ~Recipeticket();
     string getCategory();
     string getName();
