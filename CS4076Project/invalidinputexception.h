@@ -12,7 +12,7 @@ public:
     virtual const char* what();
     ~invalidInputException();
 
-private:
+protected:
     string message;
 };
 

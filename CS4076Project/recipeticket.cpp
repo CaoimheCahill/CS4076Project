@@ -19,6 +19,11 @@ Recipeticket::Recipeticket(string category, string name, string description, str
 
 Recipeticket::~Recipeticket(){}
 
+//compare recipes by name
+bool operator==(const string& recipeName, const string& recipeName2){
+    return recipeName.compare(recipeName2) == 0;
+}
+
 string Recipeticket::getCategory(){
     return category;
 }
